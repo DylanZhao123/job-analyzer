@@ -1,0 +1,35 @@
+Analyze this job posting and provide structured insights.
+
+**Job Title:** {title}
+**Company:** {company}
+**Location:** {location}
+**Salary:** {salary_range}
+
+**Description:**
+{description}
+
+Respond in JSON format with the following structure. Choose from the provided options for each field:
+
+{{
+    "job_category": "ML Engineer | Data Scientist | AI Researcher | NLP Engineer | Computer Vision Engineer | AI Product Manager | MLOps Engineer | Data Engineer | Research Scientist | Applied Scientist | Robotics Engineer | AI Infrastructure Engineer | Prompt Engineer | Other",
+
+    "seniority_level": "Junior | Mid | Senior | Lead | Principal | Director | Not specified",
+
+    "years_experience_required": "0-2 | 2-5 | 5-8 | 8-10 | 10+ | Not specified",
+
+    "education_required": "Bachelor's Required | Bachelor's Preferred | Master's Required | Master's Preferred | PhD Required | PhD Preferred | Not specified",
+
+    "remote_policy": "Remote | Hybrid | On-site | Not specified",
+
+    "company_stage": "Startup | Scaleup | Enterprise | Not specified"
+}}
+
+Selection rules:
+- For "job_category": Choose the closest match from the list, or "Other" if none fit
+- For "seniority_level": Infer from title and requirements if not explicitly stated
+- For "years_experience_required": Choose the range that best matches, or "Not specified"
+- For "education_required": Choose based on requirements section
+- For "remote_policy": Infer from location and job description if not explicitly stated
+- For "company_stage": Infer from company size, funding info, or company name recognition
+
+Respond ONLY with valid JSON, no additional text.
